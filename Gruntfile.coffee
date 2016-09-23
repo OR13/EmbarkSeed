@@ -85,21 +85,21 @@ module.exports = (grunt) ->
       html:
         files:
           "generated/dapp/index.html" : "<%= files.html.src %>"
-          "dist/dapp/index.html"      : "<%= files.html.src %>"
+          "docs/dapp/index.html"      : "<%= files.html.src %>"
       css:
         files:
-          "dist/dapp/css/app.min.css" : "<%= files.css.src %>"
+          "docs/dapp/css/app.min.css" : "<%= files.css.src %>"
       contracts:
         files:
-          "dist/contracts/": '<%= files.contracts.src %>'
+          "docs/contracts/": '<%= files.contracts.src %>'
 
     uglify:
       dist:
         src: "<%= concat.app.dest %>" # input from the concat process
-        dest: "dist/dapp/js/app.min.js"
+        dest: "docs/dapp/js/app.min.js"
 
     clean:
-      workspaces: ["dist", "generated"]
+      workspaces: ["docs", "generated"]
 
     deploy:
       contracts: '<%= files.contracts.src %>'
